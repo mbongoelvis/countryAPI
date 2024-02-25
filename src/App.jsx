@@ -10,8 +10,8 @@ function App() {
     <>
       <Header />
       <Routes>
-        <Route path="/" element={<CountryInfoPage />} />
-        <Route path="/:country" element={<SingleCountry />} />
+        <Route path="/" exact element={<CountryInfoPage />} />
+        <Route path="/:country" exact element={<SingleCountry />} />
       </Routes>
     </>
   );

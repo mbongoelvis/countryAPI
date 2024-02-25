@@ -35,7 +35,11 @@ export const CountryInfoPage = () => {
   };
 
   const handelFillter = (value) => {
-    console.log(value);
+     setContryFilter(
+       country.filter((cout) =>
+         cout.continents[0].toLowerCase().includes(value.toLowerCase())
+       )
+     );
   };
 
   useEffect(() => {
