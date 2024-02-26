@@ -47,7 +47,7 @@ export const CountryInfoPage = () => {
   }, []);
   console.log(country);
   return (
-    <div className="bg-DarkmodeBody w-full min-h-screen pt-12">
+    <div className="dark:bg-DarkmodeBody bg-LightmodeBgBody w-full min-h-screen pt-12">
       <MainPage handelFillter={handelFillter} handelSearch={handelSearch} />
       <div className="container mx-auto mt-12  min-h-full px-2 md:px-0">
         <div className="grid md:gap-[1rem] md:gap-y-4 gap-y-3 xl:gap-[5rem] grid-cols-1 md:grid-cols-3 lg:grid-cols-4 w-full h-full">

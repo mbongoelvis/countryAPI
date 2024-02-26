@@ -41,11 +41,11 @@ export const SingleCountry = () => {
 
 
   return (
-    <div className="w-full min-h-[93vh] bg-DarkmodeBody pt-12">
+    <div className="w-full min-h-[93vh] dark:bg-DarkmodeBody bg-LightmodeBgBody pt-12">
       <div className="container mx-auto pl-2">
         <Link
           to={"/"}
-          className="flex bg-DarkModeBgHeader py-2 px-5 w-[8rem] items-center gap-5 text-white rounded"
+          className="flex dark:bg-DarkmodeBody bg-LightmodeBgBody shadow-sm shadow-LightModeBorder dark:shadow-DarkModeBorder py-2 px-5 w-[8rem] items-center gap-5 text-black dark:text-white rounded"
         >
           <FaArrowLeft />
           <p>Back</p>
@@ -53,7 +53,7 @@ export const SingleCountry = () => {
 
         {/* main card section */}
         <div className="w-full h-[80%] mt-[6rem] grid grid-cols-1 lg:grid-cols-2 gap-[4rem]">
-          <div className="w-full h-full">
+          <div className="w-full h-full shadow-LightModeBorder dark:shadow-DarkModeBorder">
             <img
               src={countryInfo.flags.png}
               alt=""
@@ -61,10 +61,10 @@ export const SingleCountry = () => {
             />
           </div>
           <div className="py-[5rem]">
-            <h1 className="text-white font-bold text-2xl">
+            <h1 className="text-black dark:text-white font-bold text-2xl">
               {countryInfo.name.common}
             </h1>
-            <div className="mt-7 text-white font-bold flex flex-col md:flex-row justify-between">
+            <div className="mt-7 text-black dark:text-white font-bold flex flex-col md:flex-row justify-between">
               <div>
                 <p className="mb-1">
                   Native Name:
@@ -110,9 +110,7 @@ export const SingleCountry = () => {
                       <p>{language}</p>
                     ) : (
                       Object.entries(language).map(([key, value]) => (
-                        <p key={key}>
-                          {value}
-                        </p>
+                        <p key={key}>{value}</p>
                       ))
                     )}
                   </span>
@@ -120,20 +118,26 @@ export const SingleCountry = () => {
               </div>
             </div>
             <div className="mt-12 flex flex-col md:flex-row gap-5">
-              <p className="text-white font-bold">Border Countres:</p>
+              <p className="text-black dark:text-white font-bold">
+                Border Countres:
+              </p>
               <div className="flex gap-2 flex-wrap">
-                {borders ? (borders.length === 0 ? (
-                  <p>No border countries</p>
+                {borders ? (
+                  borders.length === 0 ? (
+                    <p>No border countries</p>
+                  ) : (
+                    borders.map((border) => (
+                      <p
+                        className="bg-DarkModeBgHeader text-white font-thin px-4 rounded shadow-sm shadow-gray-700"
+                        key={border}
+                      >
+                        {border}
+                      </p>
+                    ))
+                  )
                 ) : (
-                  borders.map((border) => (
-                    <p
-                      className="bg-DarkModeBgHeader text-white font-thin px-4 rounded shadow-sm shadow-gray-700"
-                      key={border}
-                    >
-                      {border}
-                    </p>
-                  ))
-                )) : (<p className="text-white">No borders</p>)}
+                  <p className="text-black dark:text-white">No borders</p>
+                )}
               </div>
             </div>
           </div>

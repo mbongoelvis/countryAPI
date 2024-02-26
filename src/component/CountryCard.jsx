@@ -2,11 +2,11 @@ import React from "react";
 
 export const CountryCard = ({ img, name, population, region, capital }) => {
   return (
-    <div className="w-full h-[25rem] grid grid-rows-2 rounded-lg overflow-hidden bg-DarkModeBgHeader">
+    <div className="w-full h-[25rem] grid grid-rows-2 rounded-lg overflow-hidden dark:bg-DarkmodeBody bg-LightmodeBgBody shadow-2xl shadow-LightModeBorder dark:shadow-DarkModeBorder">
       <div className="w-full">
         <img src={img} alt="Coutry flag" className="w-full h-full" />
       </div>
-      <div className="w-full h-full text-white p-5 md:p-10">
+      <div className="w-full h-full text-black dark:text-white p-5 md:p-10">
         <h2 className="text-lg mb-3 font-[800]">{name}</h2>
         <div>
           <p className="font-semibold mb-2">
